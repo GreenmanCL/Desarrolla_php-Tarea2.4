@@ -1,0 +1,35 @@
+html {
+    background-color: rgba(78, 78, 78, 0.507);
+}
+
+body {
+    margin: 0;               
+    min-height: 500px;       
+    display: flex;        
+    /* Centrar texto */   
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;      
+    padding: 20px;        
+    box-sizing: border-box; /* esto ayuda que no rompa el display */
+}
+
+.menu {
+    min-height: 350px;
+    background-color: rgb(233, 232, 232);
+}
+.todo {
+    background-color: rgb(241, 240, 240);
+}
+.todo, .menu {
+    text-align: center;
+    width: 450px;
+    padding: 30px;           
+    min-height: 250px;       
+    box-sizing: border-box;  /* esto ayuda que no rompa el display */
+    /* Centrar texto */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;     
+}
