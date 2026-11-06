@@ -28,19 +28,19 @@
             // Iniciar sesión para poder leer el arreglo guardado en registro.php
             session_start();
 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
                 $user = trim($_POST['user']);
                 $pass = $_POST['password'];
 
-                // 1. Verificar si hay algún usuario registrado en la sesión
-                if (isset($_SESSION['users'])) {
+                //Verificar si hay algún usuario registrado
+                if( isset($_SESSION['users']) ) {
                     $usuario = $_SESSION['users'];
 
-                    // 2. Buscar al usuario registrado (comparar el login)
-                    if ($user === $usuario['username']) {
+                    // Buscar al usuario registrado 
+                    if( $user === $usuario['username'] ) {
                         
-                        // 3. Recuperar el hash y verificar la contraseña capturada
-                        if (password_verify($pass, $usuario['password'])) {
+                        // Recuperar el hash y verificar la contraseña
+                        if( password_verify($pass, $usuario['password']) ) {
                             echo "<h3>¡Bienvenido ". $usuario['nombre'] ."!<br>😄</h3>";
                         } else {
                             echo "Contraseña incorrecta";
